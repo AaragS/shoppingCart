@@ -1,0 +1,39 @@
+<section>
+<div class="container">
+    <table class="table mt-5">
+        <thead>
+        <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Title</th>
+            <th scope="col">Price</th>
+            <th scope="col">Count</th>
+        </tr>        
+        </thead>
+        <tbody>
+            {{#each products}}
+            <tr>
+              
+                <td > <img src="/product-images/{{this.product._id}}.jpg" style="width: 50px;height:fit-content;
+    height: auto;"   alt=""></td>
+                <td>{{this.product.name}}</td>
+                <td>{{this.product.Price}}</td>
+               
+               
+                <td>
+                    <button class="cart-item-count" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',-1)">-</button><span id="{{this.product._id}}">{{this.quantity}}</span><button class="cart-item-count" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',1)">+</button>
+                </td>
+                <td>
+               <button class="btn btn-danger" onclick="deleteCartItem('{{this._id}}','{{this.product._id}}')">Delete</button>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <hr>
+   <div class="float-right pr-5">
+    <h5 class="mr-5 float-left">Total Rs.<span id="total">{{total}}</span></h5>
+    <a href="/place-order" style="width:100%" class="btn btn-success  mt-3" >Place order</a>
+    </div>
+</div>
+</section>

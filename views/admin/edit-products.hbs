@@ -1,0 +1,18 @@
+<div class="container">
+
+<form action="/admin/edit-products/{{product._id}}" enctype="multipart/form-data" method="post">
+<br><br><br>
+<label for="" >Title</label>
+<input type="text" class="form-control" value="{{product.name}}" name="name" id=""><br><br>
+<label>Company</label>
+<input type="text" name="Company" value="{{product.Company}}" class="form-control" id=""><br><br>
+<label for="">Price</label>
+<input type="text" name="Price" value="{{product.Price}}"><br><br>
+<label for="">Image</label>
+
+<img src="/product-images/{{product._id}}.jpg" style="width:100px; height:auto" id="imageView" alt="" srcset="">
+<input type="file" class="form-control"  onchange='viewImage(event)' name="Image" id=""><br><br>
+<input type="submit" class="btn btn-success" value="submit">
+</form>
+</div>
+

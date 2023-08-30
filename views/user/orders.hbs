@@ -1,0 +1,34 @@
+<section>
+
+    <div class="container">
+        <div class="row ">
+        
+
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th scope="col">Ordered Date</th>
+                <th scope="col">payment Mode</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each orders}}
+            <tr>
+                <td>{{this.date}}</td>
+                <td>{{this.paymentMethod}}</td>
+                <td>{{this.totalPrice}}</td>
+                <td>{{this.status}}</td>
+                <td>
+                    <a href="/view-ordered-product/{{this._id}}" class="btn btn-primary">View product</a>
+                </td>
+
+
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+        </div>
+    </div>
+</section>
